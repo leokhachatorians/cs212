@@ -55,6 +55,7 @@ int main() {
                 printf("Performing intersection of Set 1 and Set 2\n");
                 set_3 = set_1 - set_2;
             case 7:
+                std::cout << std::endl;
                 std::cout << "Set 1: " << set_1 << std::endl;
                 std::cout << "Set 2: " << set_2 << std::endl;
                 std::cout << "Set 3: " << set_3 << std::endl;

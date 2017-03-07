@@ -34,6 +34,8 @@ std::vector<Type> Set<Type>::to_vector() const {
 }
 template<class Type>
 bool Set<Type>::exists(Type element) const {
+    // Loop over each element in calling set's vector
+    // to determine if the passed element exists
     std::vector<Type> set_vec = to_vector();
     bool found = false;
     for (int i = 0; i < get_current_size(); i++) {

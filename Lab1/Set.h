@@ -19,6 +19,10 @@ class Set {
         std::vector<Type> to_vector() const;
 
         Set<Type> &operator+(const Set<Type> &B) {
+            // Iterate over set A and add element into temp set if not already exists
+            // Then, do the same for set B.
+            //
+            // Return temp set as a pointer due to some errors via LinkedBag
             std::vector<Type> set_A = to_vector();
             std::vector<Type> set_B = B.to_vector();
             Set<Type> *temp = new Set<Type>;
@@ -37,6 +41,7 @@ class Set {
             return *temp;
         }
         friend std::ostream &operator<<(std::ostream &out, Set<Type> &s) {
+            // Simply loop over calling sets vector and output each element
             std::vector<Type> vec = s.to_vector();
             for (int i = 0; i < s.get_current_size(); i++) {
                 out << vec[i] << " ";
@@ -46,6 +51,9 @@ class Set {
         }
 
         Set<Type> &operator-(const Set<Type> &B) {
+            // Loops over set A and checks if that entry exists in set B.
+            // If it does, simply add it into out temp set and return when
+            // finished.
             std::vector<Type> set_A = to_vector();
             Set<Type> *temp = new Set<Type>;
 
